@@ -1,0 +1,83 @@
+name: Sync Skills to Akasha App
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "skills/**"
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Akasha_skills
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Build skills.json
+        run: python3 scripts/build_skills.py
+
+      - name: Commit updated skills.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add skills.json
+          git diff --staged --quiet || git commit -m "chore: update skills.json index [skip ci]"
+          git push
+
+      - name: Sync skills.json to Akasha_app
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          # Fetch the current SHA of the file in Akasha_app (needed for the PUT API)
+          RESPONSE=$(curl -s \
+            -H "Authorization: token $GH_PAT" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/azerothl/Akasha_app/contents/data/skills.json")
+
+          FILE_SHA=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('sha',''))")
+
+          # Base64-encode the new skills.json
+          CONTENT=$(base64 -w 0 skills.json)
+
+          # Build JSON payload
+          PAYLOAD=$(python3 -c "
+          import json, sys
+          payload = {
+            'message': 'chore: sync skills from Akasha_skills',
+            'content': sys.argv[1],
+            'sha': sys.argv[2],
+            'branch': 'main'
+          }
+          # Remove sha if empty (new file)
+          if not payload['sha']:
+              del payload['sha']
+          print(json.dumps(payload))
+          " "$CONTENT" "$FILE_SHA")
+
+          # Push the file
+          RESULT=$(curl -s -o /tmp/api_response.json -w "%{http_code}" \
+            -X PUT \
+            -H "Authorization: token $GH_PAT" \
+            -H "Accept: application/vnd.github+json" \
+            -H "Content-Type: application/json" \
+            "https://api.github.com/repos/azerothl/Akasha_app/contents/data/skills.json" \
+            -d "$PAYLOAD")
+
+          echo "HTTP status: $RESULT"
+          cat /tmp/api_response.json
+
+          if [ "$RESULT" != "200" ] && [ "$RESULT" != "201" ]; then
+            echo "ERROR: Failed to sync skills.json to Akasha_app (HTTP $RESULT)"
+            exit 1
+          fi
+
+          echo "Successfully synced skills.json to Akasha_app"

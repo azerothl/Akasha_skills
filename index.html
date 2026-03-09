@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akasha Skills</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3250;
+      --accent: #7c6af7;
+      --accent-soft: rgba(124, 106, 247, 0.15);
+      --text: #e8eaf6;
+      --text-muted: #8b8fad;
+      --featured: #f7c76a;
+      --tag-bg: #1e2235;
+      --radius: 14px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── Header ──────────────────────────────────────────────── */
+    header {
+      padding: 48px 24px 24px;
+      text-align: center;
+    }
+    header .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    header .logo svg { width: 36px; height: 36px; }
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    header p.subtitle {
+      margin-top: 8px;
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    /* ── Controls ────────────────────────────────────────────── */
+    .controls {
+      max-width: 900px;
+      margin: 24px auto 0;
+      padding: 0 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .search-box {
+      flex: 1;
+      min-width: 220px;
+      position: relative;
+    }
+    .search-box svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 10px 12px 10px 38px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-box input:focus { border-color: var(--accent); }
+    .search-box input::placeholder { color: var(--text-muted); }
+
+    select.filter {
+      padding: 10px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.9rem;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    select.filter:focus { border-color: var(--accent); }
+
+    /* ── Stats bar ───────────────────────────────────────────── */
+    .stats {
+      max-width: 900px;
+      margin: 16px auto 0;
+      padding: 0 24px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* ── Grid ────────────────────────────────────────────────── */
+    main {
+      max-width: 900px;
+      margin: 20px auto 60px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    /* ── Card ────────────────────────────────────────────────── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: var(--shadow);
+      transition: transform 0.18s, border-color 0.18s, box-shadow 0.18s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 32px rgba(124,106,247,0.2);
+    }
+    .card.featured::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #a78bfa);
+    }
+
+    /* ── Card header ─────────────────────────────────────────── */
+    .card-head {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.4rem;
+    }
+    .card-meta { flex: 1; min-width: 0; }
+    .card-name {
+      font-weight: 600;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 20px;
+    }
+    .badge-featured { background: rgba(247,199,106,0.18); color: var(--featured); border: 1px solid rgba(247,199,106,0.3); }
+    .badge-soon     { background: rgba(139,143,173,0.15); color: var(--text-muted); border: 1px solid var(--border); }
+    .card-version   { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* ── Description ─────────────────────────────────────────── */
+    .card-desc {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    /* ── Tags ────────────────────────────────────────────────── */
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tag {
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      padding: 3px 9px;
+      border-radius: 20px;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────── */
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 4px;
+      border-top: 1px solid var(--border);
+    }
+    .card-author {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .card-category {
+      font-size: 0.75rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid rgba(124,106,247,0.25);
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+
+    /* ── Install button ──────────────────────────────────────── */
+    .install-btn {
+      display: block;
+      width: 100%;
+      padding: 9px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.18s, opacity 0.18s;
+    }
+    .install-btn:hover  { background: #6b5cf0; }
+    .install-btn.soon   { background: var(--surface2); color: var(--text-muted); cursor: default; }
+
+    /* ── Copy toast ──────────────────────────────────────────── */
+    .toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 100;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+    /* ── Empty state ─────────────────────────────────────────── */
+    .empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 24px;
+      color: var(--text-muted);
+    }
+    .empty svg { margin-bottom: 16px; opacity: 0.4; }
+
+    /* ── Loading ─────────────────────────────────────────────── */
+    .loading {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px;
+      color: var(--text-muted);
+    }
+    .spinner {
+      width: 32px; height: 32px;
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <!-- Akasha logo placeholder -->
+      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="18" cy="18" r="18" fill="url(#logoGrad)"/>
+        <path d="M18 8l6 10H12L18 8z" fill="white" opacity="0.9"/>
+        <path d="M18 28l-6-10h12L18 28z" fill="white" opacity="0.6"/>
+        <defs>
+          <linearGradient id="logoGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#7c6af7"/>
+            <stop offset="1" stop-color="#a78bfa"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <h1>Akasha Skills</h1>
+    <p class="subtitle">Extend your autonomous agent with community-built skills</p>
+  </header>
+
+  <div class="controls">
+    <div class="search-box">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input id="search" type="text" placeholder="Search skills…" oninput="render()" />
+    </div>
+    <select id="catFilter" class="filter" onchange="render()">
+      <option value="">All categories</option>
+    </select>
+    <select id="featFilter" class="filter" onchange="render()">
+      <option value="">All skills</option>
+      <option value="featured">Featured only</option>
+    </select>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <main id="grid">
+    <div class="loading"><div class="spinner"></div>Loading skills…</div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // ── Icon map (Lucide-like Unicode emoji fallback) ──────────
+    const ICONS = {
+      "calculator":    "🧮",
+      "trending-up":   "📈",
+      "cloud-sun":     "⛅",
+      "clock":         "⏰",
+      "code":          "💻",
+      "database":      "🗄️",
+      "globe":         "🌐",
+      "zap":           "⚡",
+      "search":        "🔍",
+      "mail":          "✉️",
+      "bell":          "🔔",
+      "star":          "⭐",
+    };
+    function iconFor(name) {
+      return ICONS[name] || "🔧";
+    }
+
+    // ── State ──────────────────────────────────────────────────
+    let allSkills = [];
+
+    // ── Fetch skills.json ──────────────────────────────────────
+    async function loadSkills() {
+      try {
+        const res = await fetch("skills.json");
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        allSkills = await res.json();
+        populateCategories();
+        render();
+      } catch (err) {
+        document.getElementById("grid").innerHTML =
+          `<div class="empty"><p>Failed to load skills: ${err.message}</p></div>`;
+      }
+    }
+
+    function populateCategories() {
+      const cats = [...new Set(allSkills.map(s => s.category).filter(Boolean))].sort();
+      const sel = document.getElementById("catFilter");
+      cats.forEach(c => {
+        const opt = document.createElement("option");
+        opt.value = c;
+        opt.textContent = c.charAt(0).toUpperCase() + c.slice(1);
+        sel.appendChild(opt);
+      });
+    }
+
+    // ── Render ──────────────────────────────────────────────────
+    function render() {
+      const q    = document.getElementById("search").value.toLowerCase();
+      const cat  = document.getElementById("catFilter").value;
+      const feat = document.getElementById("featFilter").value;
+
+      const filtered = allSkills.filter(s => {
+        if (cat  && s.category !== cat) return false;
+        if (feat === "featured" && !s.featured) return false;
+        if (q) {
+          const hay = [s.name, s.description, s.author, s.category, ...(s.tags || [])].join(" ").toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+
+      document.getElementById("stats").textContent =
+        `Showing ${filtered.length} of ${allSkills.length} skill${allSkills.length !== 1 ? "s" : ""}`;
+
+      const grid = document.getElementById("grid");
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="empty">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <p>No skills match your filters.</p></div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(skill => cardHTML(skill)).join("");
+    }
+
+    // ── Card HTML ───────────────────────────────────────────────
+    function cardHTML(s) {
+      const isSoon    = !!s.coming_soon;
+      const isFeatured = !!s.featured;
+      const versionTxt = s.version ? `v${s.version}` : "";
+
+      const badge = isFeatured
+        ? `<span class="badge badge-featured">⭐ Featured</span>`
+        : isSoon
+          ? `<span class="badge badge-soon">Coming soon</span>`
+          : "";
+
+      const tags = (s.tags || []).map(t => `<span class="tag">${t}</span>`).join("");
+
+      const btn = isSoon
+        ? `<span class="install-btn soon">Coming soon</span>`
+        : `<button class="install-btn" onclick="copyInstall(${JSON.stringify(s.install_command)})">Copy install command</button>`;
+
+      return `
+        <div class="card${isFeatured ? " featured" : ""}">
+          <div class="card-head">
+            <div class="icon-wrap">${iconFor(s.icon)}</div>
+            <div class="card-meta">
+              <div class="card-name">${esc(s.name)} ${badge}</div>
+              ${versionTxt ? `<div class="card-version">${esc(versionTxt)}</div>` : ""}
+            </div>
+          </div>
+          <p class="card-desc">${esc(s.description || "")}</p>
+          ${tags ? `<div class="card-tags">${tags}</div>` : ""}
+          <div class="card-footer">
+            <span class="card-author">by ${esc(s.author || "unknown")}</span>
+            ${s.category ? `<span class="card-category">${esc(s.category)}</span>` : ""}
+          </div>
+          ${btn}
+        </div>`;
+    }
+
+    function esc(str) {
+      return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    // ── Copy install command ────────────────────────────────────
+    function copyInstall(cmd) {
+      navigator.clipboard.writeText(cmd)
+        .then(() => showToast("Install command copied!"))
+        .catch(() => showToast("Copy failed — please copy manually: " + cmd));
+    }
+
+    let toastTimer;
+    function showToast(msg) {
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => t.classList.remove("show"), 2500);
+    }
+
+    loadSkills();
+  </script>
+</body>
+</html>

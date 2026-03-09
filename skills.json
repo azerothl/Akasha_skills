@@ -1,0 +1,19 @@
+[
+  {
+    "id": "calculator",
+    "name": "Calculator",
+    "version": "1.0.0",
+    "description": "Math and unit conversions. The agent can perform calculations and look up conversions via tools.",
+    "author": "Akasha",
+    "category": "utility",
+    "tags": [
+      "math",
+      "calculator",
+      "conversion"
+    ],
+    "icon": "calculator",
+    "featured": true,
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/calculator/skill.md",
+    "install_command": "Install the calculator skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/calculator"
+  }
+]
