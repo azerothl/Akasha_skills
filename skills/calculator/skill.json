@@ -8,6 +8,6 @@
   "tags": ["math", "calculator", "conversion"],
   "icon": "calculator",
   "featured": true,
-  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/calculator/skill.md",
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/calculator/SKILL.md",
   "install_command": "Install the calculator skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/calculator"
 }

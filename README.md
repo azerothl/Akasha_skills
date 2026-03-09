@@ -12,8 +12,10 @@ Skills library for autonomous agents (specifically made for [Akasha](https://git
 Akasha_skills/
 ├── skills/
 │   └── <skill-id>/
-│       ├── skill.json   # Skill metadata (id, name, version, description, …)
-│       └── skill.md     # Installation guide and usage documentation
+│       ├── SKILL.md     # Agent instructions (required – agentskills.io spec)
+│       ├── skill.json   # Skill metadata for the gallery (id, name, version, …)
+│       ├── references/  # Optional – supporting docs referenced by SKILL.md
+│       └── scripts/     # Optional – helper scripts
 ├── scripts/
 │   └── build_skills.py  # Aggregates all skill.json files → skills.json
 ├── skills.json          # Auto-generated index (do not edit manually)
@@ -28,7 +30,20 @@ Akasha_skills/
 ## Adding a new skill
 
 1. Create a folder under `skills/<your-skill-id>/`.
-2. Add a `skill.json` with the following fields:
+2. Add a **`SKILL.md`** (uppercase) — this is the core agent instructions file, following the [agentskills.io specification](https://agentskills.io/specification). It must include YAML frontmatter:
+
+   ```markdown
+   ---
+   name: my-skill
+   description: What the skill does and when the agent should use it.
+   ---
+   
+   # My Skill
+   
+   Agent instructions here…
+   ```
+
+3. Add a `skill.json` with the following fields for the gallery:
 
    | Field | Type | Description |
    |---|---|---|
@@ -41,11 +56,11 @@ Akasha_skills/
    | `tags` | string[] | List of searchable tags |
    | `icon` | string | Icon name (see [Lucide Icons](https://lucide.dev)) |
    | `featured` | boolean | Whether the skill is highlighted |
-   | `install_url` | string | Raw URL to `skill.md` |
+   | `install_url` | string | Raw URL to `SKILL.md` |
    | `install_command` | string | Command for the agent to install the skill |
 
-3. Add a `skill.md` with installation instructions and usage examples.
-4. Open a pull request — CI will automatically rebuild `skills.json` on merge and sync it to `Akasha_app/data/skills.json`.
+4. Optionally add `references/` for supporting docs and `scripts/` for helper scripts.
+5. Open a pull request — CI will automatically rebuild `skills.json` on merge and sync it to `Akasha_app/data/skills.json`.
 
 ---
 
