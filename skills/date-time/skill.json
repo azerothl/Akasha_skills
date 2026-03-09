@@ -1,0 +1,13 @@
+{
+  "id": "date-time",
+  "name": "Date & Time",
+  "version": "1.0.0",
+  "description": "Date and time calculations, timezones, and formatting using date, PowerShell, or Python.",
+  "author": "Akasha",
+  "category": "utility",
+  "tags": ["date", "time", "timezone", "calendar"],
+  "icon": "calendar",
+  "featured": false,
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/date-time/SKILL.md",
+  "install_command": "Install the date-time skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/date-time"
+}

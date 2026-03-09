@@ -1,0 +1,13 @@
+{
+  "id": "json-yaml-utils",
+  "name": "JSON/YAML Utils",
+  "version": "1.0.0",
+  "description": "Validate, format, extract fields, and convert between JSON and YAML using jq, yq, or Python.",
+  "author": "Akasha",
+  "category": "utility",
+  "tags": ["json", "yaml", "config", "jq", "yq"],
+  "icon": "file-code",
+  "featured": false,
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/json-yaml-utils/SKILL.md",
+  "install_command": "Install the json-yaml-utils skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/json-yaml-utils"
+}

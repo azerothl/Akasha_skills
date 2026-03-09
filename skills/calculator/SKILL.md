@@ -1,6 +1,10 @@
 ---
 name: calculator
 description: Math calculations and unit conversions. Use when the user wants to perform arithmetic, evaluate a mathematical expression, convert units (length, weight, temperature, area, volume, speed, currency), or compute percentages, powers, roots, or trigonometric functions.
+license: MIT
+compatibility: Requires bc (Linux/macOS) or Python (cross-platform) or PowerShell (Windows) for expression evaluation. Use run_command to evaluate expressions.
+metadata:
+  version: "1.0"
 ---
 
 # Calculator
@@ -78,6 +82,16 @@ Use web search to look up live exchange rates, then perform the conversion.
 | Natural logarithm | "ln(e²)" |
 | Factorial | "What is 10 factorial?" |
 | Constants | "What is π to 10 decimal places?" |
+
+## Execution (How to run in Akasha)
+
+This skill has no dedicated binary. To evaluate numeric expressions, use **run_command** with one of the following:
+
+- **Linux/macOS** : `run_command bc -l` with the expression on stdin, or `run_command bc -l -e "2+2"` (expression as argument). For more complex expressions (e.g. sqrt, sin), use Python.
+- **Cross-platform (Python)** : `run_command python -c "print(eval('2+2'))"` for safe arithmetic. For sqrt, sin, etc., use `run_command python -c "import math; print(math.sqrt(256))"`.
+- **Windows (PowerShell)** : `run_command powershell -Command "[math]::Sqrt(256)"` or similar for expressions.
+
+For **unit conversions**, you can either (1) use the conversion factors in the tables above and compute via run_command (e.g. Python one-liner), or (2) for currency, use **web_search** to get the exchange rate, then compute. Do not invoke a non-existent `calculator` command; always use run_command with bc, python, or powershell.
 
 ## Behavior Guidelines
 

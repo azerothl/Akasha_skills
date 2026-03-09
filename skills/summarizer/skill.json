@@ -1,0 +1,13 @@
+{
+  "id": "summarizer",
+  "name": "Summarizer",
+  "version": "1.0.0",
+  "description": "Summarize long documents, logs, or command output into concise bullets and key facts.",
+  "author": "Akasha",
+  "category": "productivity",
+  "tags": ["summary", "document", "logs", "tldr"],
+  "icon": "file-text",
+  "featured": false,
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/summarizer/SKILL.md",
+  "install_command": "Install the summarizer skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/summarizer"
+}
