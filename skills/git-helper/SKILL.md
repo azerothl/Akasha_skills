@@ -2,6 +2,7 @@
 name: git-helper
 description: Git status, log, diff, branches, and conflict resolution guidance. Use when the user asks about repo state, history, changes, or how to resolve merge conflicts. Uses run_command (git) and read_file.
 license: MIT
+compatibility: Requires Git to be installed and available in PATH. Add `git` to allowed_commands in tools_policy.yaml for run_command invocations.
 metadata:
   version: "1.0"
 ---

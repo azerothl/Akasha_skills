@@ -2,6 +2,7 @@
 name: code-review
 description: Review code for style, obvious risks, and good practices. Use when the user asks for a code review, wants to check code quality, find potential bugs, or improve style. Reads files and uses grep/search; does not run linters unless via run_command.
 license: MIT
+compatibility: Core review uses only read_file and grep_content (no external deps). Optional: run linters via run_command (e.g. cargo clippy, ruff check) if allowed in tools_policy; requires corresponding toolchain (Rust, Python, etc.) installed.
 metadata:
   version: "1.0"
 ---

@@ -1,0 +1,13 @@
+{
+  "id": "synthetic-dataset",
+  "name": "Synthetic Dataset",
+  "version": "1.0.0",
+  "description": "Generate synthetic datasets (CSV/JSON/JSONL) from a Faker schema or by exporting/sampling Hugging Face datasets.",
+  "author": "Akasha",
+  "category": "utility",
+  "tags": ["dataset", "faker", "synthetic", "huggingface", "csv", "json"],
+  "icon": "database",
+  "featured": false,
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/synthetic-dataset/SKILL.md",
+  "install_command": "Install the synthetic-dataset skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/synthetic-dataset"
+}

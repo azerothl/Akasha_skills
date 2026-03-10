@@ -1,0 +1,13 @@
+{
+  "id": "api-spec-consumer",
+  "name": "API Spec Consumer",
+  "version": "1.0.0",
+  "description": "From OpenAPI spec (URL or path): API summary (endpoints, methods, auth) and optional example calls (curl or code).",
+  "author": "Akasha",
+  "category": "utility",
+  "tags": ["openapi", "api", "swagger", "curl", "integration"],
+  "icon": "globe",
+  "featured": false,
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/api-spec-consumer/SKILL.md",
+  "install_command": "Install the api-spec-consumer skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/api-spec-consumer"
+}

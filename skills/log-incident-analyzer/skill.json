@@ -1,0 +1,13 @@
+{
+  "id": "log-incident-analyzer",
+  "name": "Log / Incident Analyzer",
+  "version": "1.0.0",
+  "description": "Analyze logs or command output: extract errors and stack traces, chronological summary, root-cause hypotheses. Optional web lookup.",
+  "author": "Akasha",
+  "category": "productivity",
+  "tags": ["logs", "incident", "debug", "errors"],
+  "icon": "alert-circle",
+  "featured": false,
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/log-incident-analyzer/SKILL.md",
+  "install_command": "Install the log-incident-analyzer skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/log-incident-analyzer"
+}

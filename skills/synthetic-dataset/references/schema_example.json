@@ -1,0 +1,7 @@
+[
+  {"name": "id", "type": "uuid"},
+  {"name": "full_name", "type": "name"},
+  {"name": "email", "type": "email"},
+  {"name": "created_at", "type": "date"},
+  {"name": "status", "type": "choice", "values": ["active", "inactive", "pending"]}
+]

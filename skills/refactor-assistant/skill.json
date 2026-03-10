@@ -1,0 +1,13 @@
+{
+  "id": "refactor-assistant",
+  "name": "Refactor Assistant",
+  "version": "1.0.0",
+  "description": "Assist with refactorings: rename symbol/file project-wide, extract function/module, apply edits across files.",
+  "author": "Akasha",
+  "category": "development",
+  "tags": ["refactor", "rename", "extract", "edit"],
+  "icon": "git-branch",
+  "featured": false,
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/refactor-assistant/SKILL.md",
+  "install_command": "Install the refactor-assistant skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/refactor-assistant"
+}

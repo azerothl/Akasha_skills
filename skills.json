@@ -1,5 +1,24 @@
 [
   {
+    "id": "api-spec-consumer",
+    "name": "API Spec Consumer",
+    "version": "1.0.0",
+    "description": "From OpenAPI spec (URL or path): API summary (endpoints, methods, auth) and optional example calls (curl or code).",
+    "author": "Akasha",
+    "category": "utility",
+    "tags": [
+      "openapi",
+      "api",
+      "swagger",
+      "curl",
+      "integration"
+    ],
+    "icon": "globe",
+    "featured": false,
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/api-spec-consumer/SKILL.md",
+    "install_command": "Install the api-spec-consumer skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/api-spec-consumer"
+  },
+  {
     "id": "calculator",
     "name": "Calculator",
     "version": "1.0.0",
@@ -15,6 +34,24 @@
     "featured": true,
     "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/calculator/SKILL.md",
     "install_command": "Install the calculator skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/calculator"
+  },
+  {
+    "id": "changelog-releaser",
+    "name": "Changelog / Release Notes",
+    "version": "1.0.0",
+    "description": "Generate a draft CHANGELOG or release notes from Git history (since last tag or date).",
+    "author": "Akasha",
+    "category": "productivity",
+    "tags": [
+      "changelog",
+      "release",
+      "git",
+      "notes"
+    ],
+    "icon": "file-text",
+    "featured": false,
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/changelog-releaser/SKILL.md",
+    "install_command": "Install the changelog-releaser skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/changelog-releaser"
   },
   {
     "id": "code-review",
@@ -51,6 +88,26 @@
     "featured": false,
     "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/date-time/SKILL.md",
     "install_command": "Install the date-time skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/date-time"
+  },
+  {
+    "id": "dependency-license-checker",
+    "name": "Dependency / License Checker",
+    "version": "1.0.0",
+    "description": "List dependencies (Cargo, npm, pip) and produce a license report; flag GPL/AGPL or policy-relevant licenses.",
+    "author": "Akasha",
+    "category": "utility",
+    "tags": [
+      "dependencies",
+      "license",
+      "compliance",
+      "cargo",
+      "npm",
+      "pip"
+    ],
+    "icon": "package",
+    "featured": false,
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/dependency-license-checker/SKILL.md",
+    "install_command": "Install the dependency-license-checker skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/dependency-license-checker"
   },
   {
     "id": "file-manager",
@@ -108,6 +165,78 @@
     "install_command": "Install the json-yaml-utils skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/json-yaml-utils"
   },
   {
+    "id": "log-incident-analyzer",
+    "name": "Log / Incident Analyzer",
+    "version": "1.0.0",
+    "description": "Analyze logs or command output: extract errors and stack traces, chronological summary, root-cause hypotheses. Optional web lookup.",
+    "author": "Akasha",
+    "category": "productivity",
+    "tags": [
+      "logs",
+      "incident",
+      "debug",
+      "errors"
+    ],
+    "icon": "alert-circle",
+    "featured": false,
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/log-incident-analyzer/SKILL.md",
+    "install_command": "Install the log-incident-analyzer skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/log-incident-analyzer"
+  },
+  {
+    "id": "refactor-assistant",
+    "name": "Refactor Assistant",
+    "version": "1.0.0",
+    "description": "Assist with refactorings: rename symbol/file project-wide, extract function/module, apply edits across files.",
+    "author": "Akasha",
+    "category": "development",
+    "tags": [
+      "refactor",
+      "rename",
+      "extract",
+      "edit"
+    ],
+    "icon": "git-branch",
+    "featured": false,
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/refactor-assistant/SKILL.md",
+    "install_command": "Install the refactor-assistant skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/refactor-assistant"
+  },
+  {
+    "id": "security-audit",
+    "name": "Security Audit",
+    "version": "1.0.0",
+    "description": "Lightweight security audit: detect secrets, risky patterns, and optional dependency vulnerability scan. Severity-ranked report.",
+    "author": "Akasha",
+    "category": "security",
+    "tags": [
+      "security",
+      "audit",
+      "secrets",
+      "dependencies"
+    ],
+    "icon": "shield",
+    "featured": false,
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/security-audit/SKILL.md",
+    "install_command": "Install the security-audit skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/security-audit"
+  },
+  {
+    "id": "sentiment-analysis",
+    "name": "Sentiment Analysis",
+    "version": "1.0.0",
+    "description": "Analyze sentiment (positive/negative) of text using a Python script and Hugging Face Transformers.",
+    "author": "Akasha",
+    "category": "utility",
+    "tags": [
+      "nlp",
+      "sentiment",
+      "transformers",
+      "python"
+    ],
+    "icon": "message-circle",
+    "featured": false,
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/sentiment-analysis/SKILL.md",
+    "install_command": "Install the sentiment-analysis skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/sentiment-analysis"
+  },
+  {
     "id": "summarizer",
     "name": "Summarizer",
     "version": "1.0.0",
@@ -124,6 +253,26 @@
     "featured": false,
     "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/summarizer/SKILL.md",
     "install_command": "Install the summarizer skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/summarizer"
+  },
+  {
+    "id": "synthetic-dataset",
+    "name": "Synthetic Dataset",
+    "version": "1.0.0",
+    "description": "Generate synthetic datasets (CSV/JSON/JSONL) from a Faker schema or by exporting/sampling Hugging Face datasets.",
+    "author": "Akasha",
+    "category": "utility",
+    "tags": [
+      "dataset",
+      "faker",
+      "synthetic",
+      "huggingface",
+      "csv",
+      "json"
+    ],
+    "icon": "database",
+    "featured": false,
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/synthetic-dataset/SKILL.md",
+    "install_command": "Install the synthetic-dataset skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/synthetic-dataset"
   },
   {
     "id": "web-researcher",

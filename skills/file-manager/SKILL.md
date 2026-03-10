@@ -2,6 +2,7 @@
 name: file-manager
 description: List, search, copy, move, rename files and create or clean directories. Use when the user wants to organize files, find files by name or pattern, batch rename, create folder structures, or clean up by extension. Works within allowed_read_paths and allowed_write_paths from tools_policy.
 license: MIT
+compatibility: Requires shell commands (ls, cp, mv, mkdir, rm on Linux/macOS, or dir, Copy-Item, Move-Item, New-Item, Remove-Item on Windows) to be allowed in tools_policy. No extra binary beyond the OS.
 metadata:
   version: "1.0"
 ---

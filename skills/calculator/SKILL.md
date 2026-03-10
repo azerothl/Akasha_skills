@@ -73,6 +73,28 @@ Supported operations:
 ### Currency
 Use web search to look up live exchange rates, then perform the conversion.
 
+## Conversion factors (for run_command)
+
+Use these numeric factors when computing unit conversions via Python/bc/PowerShell. The agent can embed them in one-liners (e.g. `python -c "print(100 * 1.60934)"` for 100 miles → km).
+
+| Conversion | Factor or formula |
+|------------|-------------------|
+| Miles → km | 1 mile = 1.60934 km |
+| Feet → m | 1 ft = 0.3048 m |
+| Inches → cm | 1 in = 2.54 cm |
+| Pounds → kg | 1 lb = 0.453592 kg |
+| Ounces → g | 1 oz = 28.3495 g |
+| °C → °F | F = C × 9/5 + 32 |
+| °F → °C | C = (F − 32) × 5/9 |
+| Kelvin → °C | C = K − 273.15 |
+| sq ft → m² | 1 ft² = 0.092903 m² |
+| Acres → hectares | 1 acre ≈ 0.404686 ha |
+| Liters → US gallons | 1 L ≈ 0.264172 gal |
+| mph → km/h | 1 mph = 1.60934 km/h |
+| 1 KB | 1024 B (or 1000 for SI); MB = 1024 KB, GB = 1024 MB, TB = 1024 GB |
+
+For other units (cups, fluid oz, knots), use the same pattern: look up the factor once and compute with run_command.
+
 ## Scientific Functions
 
 | Function | Example prompt |
@@ -91,7 +113,7 @@ This skill has no dedicated binary. To evaluate numeric expressions, use **run_c
 - **Cross-platform (Python)** : `run_command python -c "print(eval('2+2'))"` for safe arithmetic. For sqrt, sin, etc., use `run_command python -c "import math; print(math.sqrt(256))"`.
 - **Windows (PowerShell)** : `run_command powershell -Command "[math]::Sqrt(256)"` or similar for expressions.
 
-For **unit conversions**, you can either (1) use the conversion factors in the tables above and compute via run_command (e.g. Python one-liner), or (2) for currency, use **web_search** to get the exchange rate, then compute. Do not invoke a non-existent `calculator` command; always use run_command with bc, python, or powershell.
+For **unit conversions**, use the numeric factors in the **Conversion factors** section above and compute via run_command (e.g. Python one-liner). For currency, use **web_search** to get the exchange rate, then compute. Do not invoke a non-existent `calculator` command; always use run_command with bc, python, or powershell.
 
 ## Behavior Guidelines
 

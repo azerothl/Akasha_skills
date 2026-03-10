@@ -1,0 +1,13 @@
+{
+  "id": "dependency-license-checker",
+  "name": "Dependency / License Checker",
+  "version": "1.0.0",
+  "description": "List dependencies (Cargo, npm, pip) and produce a license report; flag GPL/AGPL or policy-relevant licenses.",
+  "author": "Akasha",
+  "category": "utility",
+  "tags": ["dependencies", "license", "compliance", "cargo", "npm", "pip"],
+  "icon": "package",
+  "featured": false,
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/dependency-license-checker/SKILL.md",
+  "install_command": "Install the dependency-license-checker skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/dependency-license-checker"
+}
