@@ -64,6 +64,67 @@ Akasha_skills/
 
 ---
 
+## Skill format reference (creating your own skill)
+
+If you want to create a skill for your own use (e.g. hosted elsewhere or only in your `data_dir`), the daemon only needs a valid **SKILL.md**. The format below is what Akasha expects so the agent can discover and use your skill.
+
+### Required file: SKILL.md
+
+- **Filename:** `SKILL.md` (uppercase).
+- **Frontmatter (YAML between `---`):**
+  - **Required:** `name` (identifier, e.g. `my-skill`), `description` (short text: when the agent should use this skill; used for routing).
+  - **Optional:** `license`, `compatibility`, `metadata` (e.g. `version: "1.0"`).
+- **Body:** Markdown with instructions for the agent (when to use the skill, which tools to call, guidelines, examples). See the [Agent Skills specification](https://agentskills.io/specification).
+
+### skill.json (for the gallery / catalog)
+
+If you publish the skill in the Akasha_skills gallery or another tool that reads the catalog, add a `skill.json` with:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | string | Unique identifier (lowercase, no spaces) |
+| `name` | string | Display name |
+| `version` | string | Semantic version (e.g. `1.0.0`) |
+| `description` | string | Short description |
+| `author` | string | Author or organization |
+| `category` | string | e.g. `utility`, `productivity` |
+| `tags` | string[] | Searchable tags |
+| `icon` | string | [Lucide](https://lucide.dev) icon name |
+| `featured` | boolean | Whether highlighted in gallery |
+| `install_url` | string | Raw URL to `SKILL.md` |
+| `install_command` | string | Phrase for the agent to install the skill |
+
+For a **user-only** skill (files in `data_dir/skills/` or install via URL without listing in the gallery), **only SKILL.md is required**; the daemon does not need `skill.json`. `skill.json` is used by the [Skills Library](https://azerothl.github.io/Akasha_app/skills.html) and catalog consumers.
+
+### Optional directory structure
+
+- `references/` — extra docs (e.g. REFERENCE.md) the skill can refer to.
+- `scripts/`, `assets/` — helpers and assets (see [What are skills?](https://agentskills.io/what-are-skills)).
+
+When installing from GitHub, the daemon can fetch the repo tree (SKILL.md + these folders). For other hosts, only the file at the install URL (usually `SKILL.md`) is downloaded unless the host supports directory listing.
+
+### Installing your skill
+
+- **Via agent:** Ask in chat, e.g. “Install the skill from https://…” The agent uses the `install_skill` tool; the URL must point to a raw `SKILL.md` or a path where `SKILL.md` is available.
+- **Manual:** Copy your skill folder into `data_dir/skills/<name>/`, then type `/skills reload` in chat.
+
+For non-GitHub hosts, configure `allowed_skill_install_hosts` in `tools_policy.yaml` (see [Akasha docs](https://azerothl.github.io/Akasha_app/docs.html#configuration)).
+
+### Minimal SKILL.md example
+
+```markdown
+---
+name: my-skill
+description: Use when the user wants to do X. Do Y and Z.
+---
+
+# My Skill
+
+When the user asks for X, use the tools A and B. Return the result in format …
+```
+
+---
+
 ## CI / Automation
 
 The `sync-skills.yml` workflow runs on every push to `main` that modifies a file under `skills/**`. It:
