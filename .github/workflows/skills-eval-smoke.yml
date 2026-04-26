@@ -1,0 +1,51 @@
+name: Skills index smoke
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - "scripts/build_skills.py"
+  pull_request:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - "scripts/build_skills.py"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Build skills.json
+        run: python3 scripts/build_skills.py
+
+      - name: Validate JSON and required keys
+        run: |
+          python3 << 'PY'
+          import json, pathlib, sys
+          p = pathlib.Path("skills.json")
+          data = json.loads(p.read_text(encoding="utf-8"))
+          if not isinstance(data, list) or len(data) == 0:
+              print("skills.json must be a non-empty array")
+              sys.exit(1)
+          required = ("id", "name", "version", "install_url")
+          for i, s in enumerate(data):
+              if not isinstance(s, dict):
+                  sys.exit(f"Entry {i} is not an object")
+              missing = [k for k in required if not str(s.get(k, "")).strip()]
+              if missing:
+                  print(f"Entry {i} ({s.get('id')!r}) missing: {missing}")
+                  sys.exit(1)
+              v = str(s.get("version", ""))
+              parts = v.split(".")
+              if len(parts) < 2 or not all(p.isdigit() for p in parts[:2]):
+                  print(f"Entry {i} id={s.get('id')!r}: version should look like semver major.minor.patch, got {v!r}")
+                  sys.exit(1)
+          print(f"OK: {len(data)} skill(s) validated")
+          PY

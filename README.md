@@ -125,6 +125,10 @@ When the user asks for X, use the tools A and B. Return the result in format …
 
 ---
 
+## Versioning, changelog, evals
+
+See **[EVALS_AND_VERSIONING.md](EVALS_AND_VERSIONING.md)** for semver discipline, lockfile alignment with Akasha `skills.lock.jsonl`, and the planned evals CI story (Hermes-style quality loop).
+
 ## CI / Automation
 
 The `sync-skills.yml` workflow runs on every push to `main` that modifies a file under `skills/**`. It:
