@@ -1,0 +1,6 @@
+{
+  "name": "daily-project-checkin",
+  "description": "Recurring project check-ins with schedule_task and memory context.",
+  "version": "1.0.0",
+  "entry": "SKILL.md"
+}

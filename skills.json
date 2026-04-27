@@ -56,6 +56,24 @@
     "install_command": "Install the changelog-releaser skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/changelog-releaser"
   },
   {
+    "id": "daily-project-checkin",
+    "name": "Daily Project Check-in",
+    "version": "1.0.0",
+    "description": "Create recurring project check-ins with schedule_task and memory context snapshots.",
+    "author": "Akasha",
+    "category": "productivity",
+    "tags": [
+      "schedule",
+      "daily",
+      "project",
+      "memory"
+    ],
+    "icon": "calendar-check",
+    "featured": true,
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/daily-project-checkin/SKILL.md",
+    "install_command": "Install the daily-project-checkin skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/daily-project-checkin"
+  },
+  {
     "id": "code-review",
     "name": "Code Review",
     "version": "1.0.0",
