@@ -54,3 +54,9 @@ jobs:
                       sys.exit(1)
           print(f"OK: {len(data)} skill(s) validated")
           PY
+
+      - name: Pilot self_check (calculator, date-time)
+        run: |
+          chmod +x skills/calculator/scripts/self_check.sh skills/date-time/scripts/self_check.sh
+          bash skills/calculator/scripts/self_check.sh
+          bash skills/date-time/scripts/self_check.sh
