@@ -1,0 +1,6 @@
+{
+  "name": "daily-digest",
+  "description": "Concise daily operational digest from memory and schedules.",
+  "version": "1.0.0",
+  "entry": "SKILL.md"
+}

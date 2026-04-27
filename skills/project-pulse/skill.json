@@ -1,0 +1,6 @@
+{
+  "name": "project-pulse",
+  "description": "Recurring project health check with scheduler and memory.",
+  "version": "1.0.0",
+  "entry": "SKILL.md"
+}

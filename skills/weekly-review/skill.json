@@ -1,0 +1,6 @@
+{
+  "name": "weekly-review",
+  "description": "Weekly review with trends, blockers, and next actions.",
+  "version": "1.0.0",
+  "entry": "SKILL.md"
+}
