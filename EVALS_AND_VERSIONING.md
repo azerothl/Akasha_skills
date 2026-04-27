@@ -16,7 +16,7 @@
 ## Evals (CI)
 
 - **Workflow:** `.github/workflows/skills-eval-smoke.yml` runs on `skills/**` changes: rebuilds `skills.json` and validates JSON + required keys (`id`, `name`, `version`, `install_url`) + semver-shaped `version`.
-- **Pilot convention:** `skills/<id>/scripts/self_check.sh` (bash + `python3` sanity on `skill.json`). CI runs **calculator** and **date-time** in `.github/workflows/skills-eval-smoke.yml`; add more skills to that step as they gain scripts.
+- **Pilot convention:** `skills/<id>/scripts/self_check.sh` (bash + `python3` sanity on `skill.json`). CI auto-discover and runs **all** `self_check.sh` scripts found under `skills/*/scripts/`.
 
 ## Quality metadata
 
