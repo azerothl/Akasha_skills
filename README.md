@@ -27,6 +27,19 @@ Akasha_skills/
 
 ---
 
+## Runtime compatibility (queue/fork/events)
+
+When writing or updating skills for modern Akasha runtimes:
+
+- Do not assume "one user message = immediate execution".
+- Keep instructions robust if the client uses queued delivery (`steering` / `follow_up`).
+- Prefer idempotent steps and explicit checkpoints so replay/forked sessions remain safe.
+- When a skill depends on task events, rely on normalized event kinds and tolerate unknown ones.
+
+This keeps skills compatible across daemon, TUI, Tauri UI, and Code Studio as event contracts evolve.
+
+---
+
 ## Adding a new skill
 
 1. Create a folder under `skills/<your-skill-id>/`.
