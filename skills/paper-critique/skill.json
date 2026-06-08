@@ -1,0 +1,14 @@
+{
+  "id": "paper-critique",
+  "name": "Paper Critique",
+  "version": "1.0.0",
+  "description": "Grille de relecture académique (méthodologie, forces, faiblesses) pour un article.",
+  "author": "Akasha",
+  "category": "research",
+  "tags": ["academic", "peer-review", "paper", "research"],
+  "icon": "file-text",
+  "featured": false,
+  "inspired_by": ["bytedance/deer-flow/skills/public/academic-paper-review"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/paper-critique/SKILL.md",
+  "install_command": "Install the paper-critique skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/paper-critique"
+}

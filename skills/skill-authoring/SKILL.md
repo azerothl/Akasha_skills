@@ -70,6 +70,22 @@ Install the my-skill skill from https://github.com/ORG/REPO/tree/main/skills/my-
 
 - Add the folder under the **Akasha_skills** repo (or host `SKILL.md` on HTTPS per `install_skill` rules).
 - User runs **install_skill** with the GitHub tree URL or uses **/skills reload** after copying into `data_dir/skills/`.
+- Add **`skill.json`** for gallery index; run `python3 scripts/build_skills.py` to regenerate root `skills.json`.
+- Optional **`inspired_by`**: array of upstream skill URLs — never copy source skill names verbatim.
+
+## Evals and triggering (Akasha)
+
+Align with [EVALS_AND_VERSIONING.md](../../EVALS_AND_VERSIONING.md):
+
+1. **Triggering** — `description` must say *when* to invoke (pushy, specific verbs: "Use when user asks to…").
+2. **Self-check** — Add `scripts/self_check.sh` validating `skill.json` id/version; CI runs all under `skills/*/scripts/`.
+3. **Eval loop** — After edits, test 3 prompts: should trigger, should not trigger, edge case.
+4. **Semver** — Breaking workflow change = major; new section = minor; typo = patch.
+5. **Provenance** — Section `## Provenance` or `inspired_by` in skill.json for adapted skills.
+
+## Reinterpretation rule
+
+Akasha skills **reinterpret** upstream workflows — new kebab-case id (`repo-docs`, not `code-documentation`), Akasha tool names only, no verbatim SKILL.md copies.
 
 ## Installation
 

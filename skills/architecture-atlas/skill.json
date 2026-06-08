@@ -1,0 +1,14 @@
+{
+  "id": "architecture-atlas",
+  "name": "Architecture Atlas",
+  "version": "1.0.0",
+  "description": "Wiki architecture avec diagrammes Mermaid ancrés dans le code réel.",
+  "author": "Akasha",
+  "category": "development",
+  "tags": ["architecture", "mermaid", "wiki", "diagrams"],
+  "icon": "network",
+  "featured": false,
+  "inspired_by": ["NousResearch/hermes-agent/optional-skills/software-development/code-wiki"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/architecture-atlas/SKILL.md",
+  "install_command": "Install the architecture-atlas skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/architecture-atlas"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "repo-intelligence",
+  "name": "Repo Intelligence",
+  "version": "1.0.0",
+  "description": "Rapport d'analyse OSS GitHub (santé, structure, écosystème) avec Mermaid.",
+  "author": "Akasha",
+  "category": "research",
+  "tags": ["github", "oss", "repository", "analysis", "open-source"],
+  "icon": "github",
+  "featured": false,
+  "inspired_by": ["bytedance/deer-flow/skills/public/github-deep-research"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/repo-intelligence/SKILL.md",
+  "install_command": "Install the repo-intelligence skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/repo-intelligence"
+}

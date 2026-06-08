@@ -1,0 +1,14 @@
+{
+  "id": "skill-discovery",
+  "name": "Skill Discovery",
+  "version": "1.0.0",
+  "description": "Parcourir la galerie Akasha_skills, comparer par catégorie/tags et installer via install_skill.",
+  "author": "Akasha",
+  "category": "utility",
+  "tags": ["skills", "gallery", "install", "catalog", "discovery"],
+  "icon": "library",
+  "featured": true,
+  "inspired_by": ["bytedance/deer-flow/skills/public/find-skills"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/skill-discovery/SKILL.md",
+  "install_command": "Install the skill-discovery skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/skill-discovery"
+}

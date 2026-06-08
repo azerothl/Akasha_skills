@@ -1,0 +1,14 @@
+{
+  "id": "tabular-insights",
+  "name": "Tabular Insights",
+  "version": "1.0.0",
+  "description": "Analyser CSV/XLSX (inspect, résumé, SQL) via analyze_table ou script DuckDB.",
+  "author": "Akasha",
+  "category": "research",
+  "tags": ["csv", "xlsx", "data", "duckdb", "analytics"],
+  "icon": "table",
+  "featured": false,
+  "inspired_by": ["bytedance/deer-flow/skills/public/data-analysis"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/tabular-insights/SKILL.md",
+  "install_command": "Install the tabular-insights skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/tabular-insights"
+}

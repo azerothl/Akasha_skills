@@ -1,0 +1,14 @@
+{
+  "id": "repo-docs",
+  "name": "Repo Docs",
+  "version": "1.0.0",
+  "description": "Générer README, doc API et docstrings à partir du code — complète changelog-releaser.",
+  "author": "Akasha",
+  "category": "development",
+  "tags": ["documentation", "readme", "api", "docstrings"],
+  "icon": "book-open",
+  "featured": false,
+  "inspired_by": ["bytedance/deer-flow/skills/public/code-documentation"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/repo-docs/SKILL.md",
+  "install_command": "Install the repo-docs skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/repo-docs"
+}

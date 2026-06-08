@@ -1,0 +1,14 @@
+{
+  "id": "diagram-spec",
+  "name": "Diagram Spec",
+  "version": "1.0.0",
+  "description": "Diagrammes Mermaid légers pour idées et flux — complète architecture-atlas.",
+  "author": "Akasha",
+  "category": "design",
+  "tags": ["mermaid", "diagram", "architecture", "flowchart"],
+  "icon": "git-branch",
+  "featured": false,
+  "inspired_by": ["NousResearch/hermes-agent/optional-skills/creative/concept-diagrams"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/diagram-spec/SKILL.md",
+  "install_command": "Install the diagram-spec skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/diagram-spec"
+}

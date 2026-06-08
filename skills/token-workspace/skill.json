@@ -1,0 +1,14 @@
+{
+  "id": "token-workspace",
+  "name": "Token Workspace",
+  "version": "1.0.0",
+  "description": "Tokens design 3 couches (primitive, sémantique, composant) avec template JSON.",
+  "author": "Akasha",
+  "category": "design",
+  "tags": ["design-system", "tokens", "css", "theme"],
+  "icon": "palette",
+  "featured": false,
+  "inspired_by": ["nextlevelbuilder/ui-ux-pro-max-skill/.claude/skills/design-system"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/token-workspace/SKILL.md",
+  "install_command": "Install the token-workspace skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/token-workspace"
+}

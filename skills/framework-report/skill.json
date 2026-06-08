@@ -1,0 +1,14 @@
+{
+  "id": "framework-report",
+  "name": "Framework Report",
+  "version": "1.0.0",
+  "description": "Rapport stratégique en 2 phases (cadre MECE/SWOT + livrable concis).",
+  "author": "Akasha",
+  "category": "research",
+  "tags": ["consulting", "strategy", "report", "framework"],
+  "icon": "briefcase",
+  "featured": false,
+  "inspired_by": ["bytedance/deer-flow/skills/public/consulting-analysis"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/framework-report/SKILL.md",
+  "install_command": "Install the framework-report skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/framework-report"
+}
