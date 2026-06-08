@@ -12,6 +12,9 @@ on:
       - "skills/**"
       - "scripts/build_skills.py"
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
