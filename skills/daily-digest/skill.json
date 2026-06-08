@@ -1,6 +1,15 @@
 {
-  "name": "daily-digest",
-  "description": "Concise daily operational digest from memory and schedules.",
+  "id": "daily-digest",
+  "name": "Daily Digest",
   "version": "1.0.0",
-  "entry": "SKILL.md"
+  "description": "Generate a concise daily digest from schedules and memory.",
+  "author": "Akasha",
+  "category": "productivity",
+  "tags": ["daily", "digest", "summary", "memory"],
+  "icon": "calendar-check",
+  "featured": false,
+  "trust_level": "verified",
+  "compat_status": "tested-v0.8",
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/daily-digest/SKILL.md",
+  "install_command": "Install the daily-digest skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/daily-digest"
 }

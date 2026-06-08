@@ -1,8 +1,9 @@
 {
   "id": "api-spec-consumer",
   "name": "API Spec Consumer",
-  "version": "1.0.0",
-  "description": "From OpenAPI spec (URL or path): API summary (endpoints, methods, auth) and optional example calls (curl or code).",
+  "version": "1.1.0",
+  "description": "OpenAPI : synthèse, exemples curl et débogage REST/GraphQL.",
+  "inspired_by": ["NousResearch/hermes-agent/optional-skills/software-development/rest-graphql-debug"],
   "author": "Akasha",
   "category": "utility",
   "tags": ["openapi", "api", "swagger", "curl", "integration"],

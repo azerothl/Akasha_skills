@@ -46,6 +46,18 @@ Read an OpenAPI (Swagger) specification from a URL or local file and produce a s
 - For examples, use placeholders for secrets (API key, token) and document required headers.
 - If the spec is very large, summarize the main paths and mention "… and N more endpoints"; optionally list all path keys.
 
+## REST / GraphQL debug
+
+When the user debugs a live API (not just reading the spec):
+
+1. **Reproduce** — Minimal curl from spec examples; use **run_command** if allowed
+2. **Headers** — Verify auth, Content-Type, Accept
+3. **GraphQL** — POST with `{ "query": "...", "variables": {} }`; parse `errors[]`
+4. **Status codes** — Map 401/403/404/422/429 to checklist (auth, path, validation, rate limit)
+5. **http_probe** — Use native tool when available for controlled probe requests
+
+Do not log real secrets; use `[REDACTED]` in examples.
+
 ## Installation
 
 To install this skill, send the following to your Akasha agent:

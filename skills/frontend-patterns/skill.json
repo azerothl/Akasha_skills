@@ -1,0 +1,14 @@
+{
+  "id": "frontend-patterns",
+  "name": "Frontend Patterns",
+  "version": "1.0.0",
+  "description": "Patterns React, Tailwind et shadcn pour akasha-ui et Code Studio.",
+  "author": "Akasha",
+  "category": "design",
+  "tags": ["react", "tailwind", "shadcn", "frontend", "ui"],
+  "icon": "component",
+  "featured": false,
+  "inspired_by": ["nextlevelbuilder/ui-ux-pro-max-skill/.claude/skills/ui-styling"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/frontend-patterns/SKILL.md",
+  "install_command": "Install the frontend-patterns skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/frontend-patterns"
+}

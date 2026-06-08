@@ -1,0 +1,14 @@
+{
+  "id": "skill-authoring",
+  "name": "Skill Authoring",
+  "version": "1.1.0",
+  "description": "Guide pour créer des skills Akasha (SKILL.md, skill.json, evals et galerie).",
+  "author": "Akasha",
+  "category": "utility",
+  "tags": ["skills", "authoring", "agentskills", "meta"],
+  "icon": "pen-tool",
+  "featured": true,
+  "inspired_by": ["bytedance/deer-flow/skills/public/skill-creator"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/skill-authoring/SKILL.md",
+  "install_command": "Install the skill-authoring skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/skill-authoring"
+}
