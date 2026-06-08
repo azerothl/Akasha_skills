@@ -1,0 +1,14 @@
+{
+  "id": "chart-picker",
+  "name": "Chart Picker",
+  "version": "1.0.0",
+  "description": "Choisir le type de graphique adapté et config optionnelle (AntV).",
+  "author": "Akasha",
+  "category": "design",
+  "tags": ["chart", "visualization", "data", "antv"],
+  "icon": "bar-chart",
+  "featured": false,
+  "inspired_by": ["bytedance/deer-flow/skills/public/chart-visualization", "antvis/chart-visualization-skills"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/chart-picker/SKILL.md",
+  "install_command": "Install the chart-picker skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/chart-picker"
+}

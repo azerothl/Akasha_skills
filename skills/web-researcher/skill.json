@@ -1,13 +1,14 @@
 {
   "id": "web-researcher",
   "name": "Web Researcher",
-  "version": "1.0.0",
-  "description": "Targeted web search, synthesis of results, and fact-checking using web_search and web_fetch.",
+  "version": "2.0.0",
+  "description": "Recherche web en quatre phases (découverte, lecture, validation, synthèse) avec sources citées et OSINT public léger.",
   "author": "Akasha",
   "category": "research",
-  "tags": ["web", "search", "research", "fact-check"],
+  "tags": ["web", "search", "research", "fact-check", "osint", "synthesis"],
   "icon": "search",
-  "featured": false,
+  "featured": true,
+  "inspired_by": ["bytedance/deer-flow/skills/public/deep-research", "NousResearch/hermes-agent/optional-skills/research/osint-investigation"],
   "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/web-researcher/SKILL.md",
   "install_command": "Install the web-researcher skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/web-researcher"
 }

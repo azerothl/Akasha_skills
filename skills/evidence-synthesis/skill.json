@@ -1,0 +1,14 @@
+{
+  "id": "evidence-synthesis",
+  "name": "Evidence Synthesis",
+  "version": "1.0.0",
+  "description": "Synthèse bibliographique légère (~20 papiers) via arXiv et résumés séquentiels.",
+  "author": "Akasha",
+  "category": "research",
+  "tags": ["arxiv", "literature", "research", "papers", "synthesis"],
+  "icon": "book-marked",
+  "featured": false,
+  "inspired_by": ["bytedance/deer-flow/skills/public/systematic-literature-review"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/evidence-synthesis/SKILL.md",
+  "install_command": "Install the evidence-synthesis skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/evidence-synthesis"
+}

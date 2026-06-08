@@ -1,6 +1,15 @@
 {
-  "name": "project-pulse",
-  "description": "Recurring project health check with scheduler and memory.",
+  "id": "project-pulse",
+  "name": "Project Pulse",
   "version": "1.0.0",
-  "entry": "SKILL.md"
+  "description": "Recurring project health pulse with schedule and memory updates.",
+  "author": "Akasha",
+  "category": "productivity",
+  "tags": ["project", "pulse", "schedule", "risk"],
+  "icon": "activity",
+  "featured": true,
+  "trust_level": "verified",
+  "compat_status": "tested-v0.8",
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/project-pulse/SKILL.md",
+  "install_command": "Install the project-pulse skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/project-pulse"
 }

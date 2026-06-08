@@ -1,0 +1,14 @@
+{
+  "id": "container-ops",
+  "name": "Container Ops",
+  "version": "1.0.0",
+  "description": "Docker et run_in_container — logs, compose, builds sécurisés.",
+  "author": "Akasha",
+  "category": "development",
+  "tags": ["docker", "container", "devops", "compose"],
+  "icon": "container",
+  "featured": false,
+  "inspired_by": ["NousResearch/hermes-agent/optional-skills/devops/docker-management"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/container-ops/SKILL.md",
+  "install_command": "Install the container-ops skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/container-ops"
+}
