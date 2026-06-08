@@ -1,0 +1,14 @@
+{
+  "id": "spreadsheet-author",
+  "name": "Spreadsheet Author",
+  "version": "1.0.0",
+  "description": "Créer tableurs structurés (XLSX/CSV, formules) — catégorie finance.",
+  "author": "Akasha",
+  "category": "finance",
+  "tags": ["excel", "xlsx", "spreadsheet", "finance"],
+  "icon": "sheet",
+  "featured": false,
+  "inspired_by": ["NousResearch/hermes-agent/optional-skills/finance/excel-author"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/spreadsheet-author/SKILL.md",
+  "install_command": "Install the spreadsheet-author skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/spreadsheet-author"
+}

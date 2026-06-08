@@ -1,0 +1,19 @@
+{
+  "color": {
+    "primitive": {
+      "blue-500": "#3b82f6",
+      "gray-900": "#111827"
+    },
+    "semantic": {
+      "primary": "{color.primitive.blue-500}",
+      "foreground": "{color.primitive.gray-900}"
+    },
+    "component": {
+      "button-primary-bg": "{color.semantic.primary}"
+    }
+  },
+  "spacing": {
+    "primitive": { "4": "1rem", "6": "1.5rem" },
+    "semantic": { "page-padding": "{spacing.primitive.6}" }
+  }
+}

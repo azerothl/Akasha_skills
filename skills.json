@@ -2,8 +2,11 @@
   {
     "id": "api-spec-consumer",
     "name": "API Spec Consumer",
-    "version": "1.0.0",
-    "description": "From OpenAPI spec (URL or path): API summary (endpoints, methods, auth) and optional example calls (curl or code).",
+    "version": "1.1.0",
+    "description": "OpenAPI : synthèse, exemples curl et débogage REST/GraphQL.",
+    "inspired_by": [
+      "NousResearch/hermes-agent/optional-skills/software-development/rest-graphql-debug"
+    ],
     "author": "Akasha",
     "category": "utility",
     "tags": [
@@ -19,9 +22,50 @@
     "install_command": "Install the api-spec-consumer skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/api-spec-consumer"
   },
   {
+    "id": "architecture-atlas",
+    "name": "Architecture Atlas",
+    "version": "1.0.0",
+    "description": "Wiki architecture avec diagrammes Mermaid ancrés dans le code réel.",
+    "author": "Akasha",
+    "category": "development",
+    "tags": [
+      "architecture",
+      "mermaid",
+      "wiki",
+      "diagrams"
+    ],
+    "icon": "network",
+    "featured": false,
+    "inspired_by": [
+      "NousResearch/hermes-agent/optional-skills/software-development/code-wiki"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/architecture-atlas/SKILL.md",
+    "install_command": "Install the architecture-atlas skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/architecture-atlas"
+  },
+  {
+    "id": "batch-processing",
+    "name": "Batch Processing",
+    "version": "1.0.0",
+    "description": "Appliquer la même modification à de nombreux fichiers de façon contrôlée.",
+    "author": "Akasha",
+    "category": "development",
+    "tags": [
+      "batch",
+      "refactor",
+      "bulk",
+      "files"
+    ],
+    "icon": "layers",
+    "featured": false,
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/batch-processing/SKILL.md",
+    "install_command": "Install the batch-processing skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/batch-processing"
+  },
+  {
     "id": "calculator",
     "name": "Calculator",
     "version": "1.0.0",
+    "changelog": "1.0.0 — Initial catalog entry; optional daemon compat field for Hermes-style supply chain.",
+    "akasha_daemon_min_version": "0.8.0",
     "description": "Math and unit conversions. The agent can perform calculations and look up conversions via tools.",
     "author": "Akasha",
     "category": "utility",
@@ -54,6 +98,28 @@
     "install_command": "Install the changelog-releaser skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/changelog-releaser"
   },
   {
+    "id": "chart-picker",
+    "name": "Chart Picker",
+    "version": "1.0.0",
+    "description": "Choisir le type de graphique adapté et config optionnelle (AntV).",
+    "author": "Akasha",
+    "category": "design",
+    "tags": [
+      "chart",
+      "visualization",
+      "data",
+      "antv"
+    ],
+    "icon": "bar-chart",
+    "featured": false,
+    "inspired_by": [
+      "bytedance/deer-flow/skills/public/chart-visualization",
+      "antvis/chart-visualization-skills"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/chart-picker/SKILL.md",
+    "install_command": "Install the chart-picker skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/chart-picker"
+  },
+  {
     "id": "code-review",
     "name": "Code Review",
     "version": "1.0.0",
@@ -72,6 +138,82 @@
     "install_command": "Install the code-review skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/code-review"
   },
   {
+    "id": "code-simplify",
+    "name": "Code Simplify",
+    "version": "1.0.0",
+    "description": "Simplifier le code sans changer le comportement observable.",
+    "author": "Akasha",
+    "category": "development",
+    "tags": [
+      "refactor",
+      "simplify",
+      "cleanup"
+    ],
+    "icon": "minimize-2",
+    "featured": false,
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/code-simplify/SKILL.md",
+    "install_command": "Install the code-simplify skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/code-simplify"
+  },
+  {
+    "id": "container-ops",
+    "name": "Container Ops",
+    "version": "1.0.0",
+    "description": "Docker et run_in_container — logs, compose, builds sécurisés.",
+    "author": "Akasha",
+    "category": "development",
+    "tags": [
+      "docker",
+      "container",
+      "devops",
+      "compose"
+    ],
+    "icon": "container",
+    "featured": false,
+    "inspired_by": [
+      "NousResearch/hermes-agent/optional-skills/devops/docker-management"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/container-ops/SKILL.md",
+    "install_command": "Install the container-ops skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/container-ops"
+  },
+  {
+    "id": "daily-digest",
+    "name": "Daily Digest",
+    "version": "1.0.0",
+    "description": "Generate a concise daily digest from schedules and memory.",
+    "author": "Akasha",
+    "category": "productivity",
+    "tags": [
+      "daily",
+      "digest",
+      "summary",
+      "memory"
+    ],
+    "icon": "calendar-check",
+    "featured": false,
+    "trust_level": "verified",
+    "compat_status": "tested-v0.8",
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/daily-digest/SKILL.md",
+    "install_command": "Install the daily-digest skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/daily-digest"
+  },
+  {
+    "id": "daily-project-checkin",
+    "name": "Daily Project Check-in",
+    "version": "1.0.0",
+    "description": "Create recurring project check-ins with schedule_task and memory context snapshots.",
+    "author": "Akasha",
+    "category": "productivity",
+    "tags": [
+      "schedule",
+      "daily",
+      "project",
+      "memory"
+    ],
+    "icon": "calendar-check",
+    "featured": true,
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/daily-project-checkin/SKILL.md",
+    "install_command": "Install the daily-project-checkin skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/daily-project-checkin"
+  },
+  {
     "id": "date-time",
     "name": "Date & Time",
     "version": "1.0.0",
@@ -88,6 +230,24 @@
     "featured": false,
     "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/date-time/SKILL.md",
     "install_command": "Install the date-time skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/date-time"
+  },
+  {
+    "id": "debug-akasha",
+    "name": "Debug Akasha",
+    "version": "1.0.0",
+    "description": "Diagnostiquer daemon, CLI, config et tools_policy Akasha.",
+    "author": "Akasha",
+    "category": "utility",
+    "tags": [
+      "akasha",
+      "debug",
+      "daemon",
+      "troubleshooting"
+    ],
+    "icon": "bug",
+    "featured": false,
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/debug-akasha/SKILL.md",
+    "install_command": "Install the debug-akasha skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/debug-akasha"
   },
   {
     "id": "dependency-license-checker",
@@ -110,6 +270,49 @@
     "install_command": "Install the dependency-license-checker skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/dependency-license-checker"
   },
   {
+    "id": "diagram-spec",
+    "name": "Diagram Spec",
+    "version": "1.0.0",
+    "description": "Diagrammes Mermaid légers pour idées et flux — complète architecture-atlas.",
+    "author": "Akasha",
+    "category": "design",
+    "tags": [
+      "mermaid",
+      "diagram",
+      "architecture",
+      "flowchart"
+    ],
+    "icon": "git-branch",
+    "featured": false,
+    "inspired_by": [
+      "NousResearch/hermes-agent/optional-skills/creative/concept-diagrams"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/diagram-spec/SKILL.md",
+    "install_command": "Install the diagram-spec skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/diagram-spec"
+  },
+  {
+    "id": "evidence-synthesis",
+    "name": "Evidence Synthesis",
+    "version": "1.0.0",
+    "description": "Synthèse bibliographique légère (~20 papiers) via arXiv et résumés séquentiels.",
+    "author": "Akasha",
+    "category": "research",
+    "tags": [
+      "arxiv",
+      "literature",
+      "research",
+      "papers",
+      "synthesis"
+    ],
+    "icon": "book-marked",
+    "featured": false,
+    "inspired_by": [
+      "bytedance/deer-flow/skills/public/systematic-literature-review"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/evidence-synthesis/SKILL.md",
+    "install_command": "Install the evidence-synthesis skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/evidence-synthesis"
+  },
+  {
     "id": "file-manager",
     "name": "File Manager",
     "version": "1.0.0",
@@ -128,6 +331,49 @@
     "install_command": "Install the file-manager skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/file-manager"
   },
   {
+    "id": "framework-report",
+    "name": "Framework Report",
+    "version": "1.0.0",
+    "description": "Rapport stratégique en 2 phases (cadre MECE/SWOT + livrable concis).",
+    "author": "Akasha",
+    "category": "research",
+    "tags": [
+      "consulting",
+      "strategy",
+      "report",
+      "framework"
+    ],
+    "icon": "briefcase",
+    "featured": false,
+    "inspired_by": [
+      "bytedance/deer-flow/skills/public/consulting-analysis"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/framework-report/SKILL.md",
+    "install_command": "Install the framework-report skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/framework-report"
+  },
+  {
+    "id": "frontend-patterns",
+    "name": "Frontend Patterns",
+    "version": "1.0.0",
+    "description": "Patterns React, Tailwind et shadcn pour akasha-ui et Code Studio.",
+    "author": "Akasha",
+    "category": "design",
+    "tags": [
+      "react",
+      "tailwind",
+      "shadcn",
+      "frontend",
+      "ui"
+    ],
+    "icon": "component",
+    "featured": false,
+    "inspired_by": [
+      "nextlevelbuilder/ui-ux-pro-max-skill/.claude/skills/ui-styling"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/frontend-patterns/SKILL.md",
+    "install_command": "Install the frontend-patterns skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/frontend-patterns"
+  },
+  {
     "id": "git-helper",
     "name": "Git Helper",
     "version": "1.0.0",
@@ -144,6 +390,31 @@
     "featured": false,
     "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/git-helper/SKILL.md",
     "install_command": "Install the git-helper skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/git-helper"
+  },
+  {
+    "id": "interface-review",
+    "name": "Interface Review",
+    "version": "1.0.0",
+    "description": "Audit UI/UX et accessibilité (checklist P0–P3, scénarios adversariaux) pour akasha-ui et Code Studio.",
+    "author": "Akasha",
+    "category": "design",
+    "tags": [
+      "ui",
+      "ux",
+      "a11y",
+      "accessibility",
+      "review",
+      "frontend"
+    ],
+    "icon": "layout",
+    "featured": true,
+    "inspired_by": [
+      "nextlevelbuilder/ui-ux-pro-max-skill",
+      "bytedance/deer-flow/skills/public/web-design-guidelines",
+      "NousResearch/hermes-agent/optional-skills/dogfood/adversarial-ux-test"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/interface-review/SKILL.md",
+    "install_command": "Install the interface-review skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/interface-review"
   },
   {
     "id": "json-yaml-utils",
@@ -183,6 +454,86 @@
     "install_command": "Install the log-incident-analyzer skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/log-incident-analyzer"
   },
   {
+    "id": "memory-hygiene",
+    "name": "Memory Hygiene",
+    "version": "1.0.0",
+    "description": "Nettoyer et organiser la mémoire agent (doublons, obsolescence).",
+    "author": "Akasha",
+    "category": "productivity",
+    "tags": [
+      "memory",
+      "cleanup",
+      "hygiene"
+    ],
+    "icon": "brain",
+    "featured": false,
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/memory-hygiene/SKILL.md",
+    "install_command": "Install the memory-hygiene skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/memory-hygiene"
+  },
+  {
+    "id": "paper-critique",
+    "name": "Paper Critique",
+    "version": "1.0.0",
+    "description": "Grille de relecture académique (méthodologie, forces, faiblesses) pour un article.",
+    "author": "Akasha",
+    "category": "research",
+    "tags": [
+      "academic",
+      "peer-review",
+      "paper",
+      "research"
+    ],
+    "icon": "file-text",
+    "featured": false,
+    "inspired_by": [
+      "bytedance/deer-flow/skills/public/academic-paper-review"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/paper-critique/SKILL.md",
+    "install_command": "Install the paper-critique skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/paper-critique"
+  },
+  {
+    "id": "plan-orchestrator",
+    "name": "Plan Orchestrator",
+    "version": "1.0.0",
+    "description": "Plans multi-étapes avec delegate_to_agent, success_check, logs JSONL et revue en deux passes.",
+    "author": "Akasha",
+    "category": "development",
+    "tags": [
+      "planning",
+      "subagent",
+      "delegate",
+      "orchestration"
+    ],
+    "icon": "list-checks",
+    "featured": true,
+    "inspired_by": [
+      "NousResearch/hermes-agent/optional-skills/software-development/subagent-driven-development",
+      "RoboClaw-Robotics/RoboClaw/skills/long-horizon-execution"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/plan-orchestrator/SKILL.md",
+    "install_command": "Install the plan-orchestrator skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/plan-orchestrator"
+  },
+  {
+    "id": "project-pulse",
+    "name": "Project Pulse",
+    "version": "1.0.0",
+    "description": "Recurring project health pulse with schedule and memory updates.",
+    "author": "Akasha",
+    "category": "productivity",
+    "tags": [
+      "project",
+      "pulse",
+      "schedule",
+      "risk"
+    ],
+    "icon": "activity",
+    "featured": true,
+    "trust_level": "verified",
+    "compat_status": "tested-v0.8",
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/project-pulse/SKILL.md",
+    "install_command": "Install the project-pulse skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/project-pulse"
+  },
+  {
     "id": "refactor-assistant",
     "name": "Refactor Assistant",
     "version": "1.0.0",
@@ -199,6 +550,49 @@
     "featured": false,
     "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/refactor-assistant/SKILL.md",
     "install_command": "Install the refactor-assistant skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/refactor-assistant"
+  },
+  {
+    "id": "repo-docs",
+    "name": "Repo Docs",
+    "version": "1.0.0",
+    "description": "Générer README, doc API et docstrings à partir du code — complète changelog-releaser.",
+    "author": "Akasha",
+    "category": "development",
+    "tags": [
+      "documentation",
+      "readme",
+      "api",
+      "docstrings"
+    ],
+    "icon": "book-open",
+    "featured": false,
+    "inspired_by": [
+      "bytedance/deer-flow/skills/public/code-documentation"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/repo-docs/SKILL.md",
+    "install_command": "Install the repo-docs skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/repo-docs"
+  },
+  {
+    "id": "repo-intelligence",
+    "name": "Repo Intelligence",
+    "version": "1.0.0",
+    "description": "Rapport d'analyse OSS GitHub (santé, structure, écosystème) avec Mermaid.",
+    "author": "Akasha",
+    "category": "research",
+    "tags": [
+      "github",
+      "oss",
+      "repository",
+      "analysis",
+      "open-source"
+    ],
+    "icon": "github",
+    "featured": false,
+    "inspired_by": [
+      "bytedance/deer-flow/skills/public/github-deep-research"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/repo-intelligence/SKILL.md",
+    "install_command": "Install the repo-intelligence skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/repo-intelligence"
   },
   {
     "id": "security-audit",
@@ -235,6 +629,70 @@
     "featured": false,
     "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/sentiment-analysis/SKILL.md",
     "install_command": "Install the sentiment-analysis skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/sentiment-analysis"
+  },
+  {
+    "id": "skill-authoring",
+    "name": "Skill Authoring",
+    "version": "1.1.0",
+    "description": "Guide pour créer des skills Akasha (SKILL.md, skill.json, evals et galerie).",
+    "author": "Akasha",
+    "category": "utility",
+    "tags": [
+      "skills",
+      "authoring",
+      "agentskills",
+      "meta"
+    ],
+    "icon": "pen-tool",
+    "featured": true,
+    "inspired_by": [
+      "bytedance/deer-flow/skills/public/skill-creator"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/skill-authoring/SKILL.md",
+    "install_command": "Install the skill-authoring skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/skill-authoring"
+  },
+  {
+    "id": "skill-discovery",
+    "name": "Skill Discovery",
+    "version": "1.0.0",
+    "description": "Parcourir la galerie Akasha_skills, comparer par catégorie/tags et installer via install_skill.",
+    "author": "Akasha",
+    "category": "utility",
+    "tags": [
+      "skills",
+      "gallery",
+      "install",
+      "catalog",
+      "discovery"
+    ],
+    "icon": "library",
+    "featured": true,
+    "inspired_by": [
+      "bytedance/deer-flow/skills/public/find-skills"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/skill-discovery/SKILL.md",
+    "install_command": "Install the skill-discovery skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/skill-discovery"
+  },
+  {
+    "id": "spreadsheet-author",
+    "name": "Spreadsheet Author",
+    "version": "1.0.0",
+    "description": "Créer tableurs structurés (XLSX/CSV, formules) — catégorie finance.",
+    "author": "Akasha",
+    "category": "finance",
+    "tags": [
+      "excel",
+      "xlsx",
+      "spreadsheet",
+      "finance"
+    ],
+    "icon": "sheet",
+    "featured": false,
+    "inspired_by": [
+      "NousResearch/hermes-agent/optional-skills/finance/excel-author"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/spreadsheet-author/SKILL.md",
+    "install_command": "Install the spreadsheet-author skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/spreadsheet-author"
   },
   {
     "id": "summarizer",
@@ -275,21 +733,90 @@
     "install_command": "Install the synthetic-dataset skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/synthetic-dataset"
   },
   {
+    "id": "tabular-insights",
+    "name": "Tabular Insights",
+    "version": "1.0.0",
+    "description": "Analyser CSV/XLSX (inspect, résumé, SQL) via analyze_table ou script DuckDB.",
+    "author": "Akasha",
+    "category": "research",
+    "tags": [
+      "csv",
+      "xlsx",
+      "data",
+      "duckdb",
+      "analytics"
+    ],
+    "icon": "table",
+    "featured": false,
+    "inspired_by": [
+      "bytedance/deer-flow/skills/public/data-analysis"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/tabular-insights/SKILL.md",
+    "install_command": "Install the tabular-insights skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/tabular-insights"
+  },
+  {
+    "id": "token-workspace",
+    "name": "Token Workspace",
+    "version": "1.0.0",
+    "description": "Tokens design 3 couches (primitive, sémantique, composant) avec template JSON.",
+    "author": "Akasha",
+    "category": "design",
+    "tags": [
+      "design-system",
+      "tokens",
+      "css",
+      "theme"
+    ],
+    "icon": "palette",
+    "featured": false,
+    "inspired_by": [
+      "nextlevelbuilder/ui-ux-pro-max-skill/.claude/skills/design-system"
+    ],
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/token-workspace/SKILL.md",
+    "install_command": "Install the token-workspace skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/token-workspace"
+  },
+  {
     "id": "web-researcher",
     "name": "Web Researcher",
-    "version": "1.0.0",
-    "description": "Targeted web search, synthesis of results, and fact-checking using web_search and web_fetch.",
+    "version": "2.0.0",
+    "description": "Recherche web en quatre phases (découverte, lecture, validation, synthèse) avec sources citées et OSINT public léger.",
     "author": "Akasha",
     "category": "research",
     "tags": [
       "web",
       "search",
       "research",
-      "fact-check"
+      "fact-check",
+      "osint",
+      "synthesis"
     ],
     "icon": "search",
-    "featured": false,
+    "featured": true,
+    "inspired_by": [
+      "bytedance/deer-flow/skills/public/deep-research",
+      "NousResearch/hermes-agent/optional-skills/research/osint-investigation"
+    ],
     "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/web-researcher/SKILL.md",
     "install_command": "Install the web-researcher skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/web-researcher"
+  },
+  {
+    "id": "weekly-review",
+    "name": "Weekly Review",
+    "version": "1.0.0",
+    "description": "Create weekly review with trends, blockers, and next actions.",
+    "author": "Akasha",
+    "category": "productivity",
+    "tags": [
+      "weekly",
+      "review",
+      "planning",
+      "risk"
+    ],
+    "icon": "clipboard-list",
+    "featured": false,
+    "trust_level": "verified",
+    "compat_status": "tested-v0.8",
+    "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/weekly-review/SKILL.md",
+    "install_command": "Install the weekly-review skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/weekly-review"
   }
 ]

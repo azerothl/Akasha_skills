@@ -1,0 +1,14 @@
+{
+  "id": "plan-orchestrator",
+  "name": "Plan Orchestrator",
+  "version": "1.0.0",
+  "description": "Plans multi-étapes avec delegate_to_agent, success_check, logs JSONL et revue en deux passes.",
+  "author": "Akasha",
+  "category": "development",
+  "tags": ["planning", "subagent", "delegate", "orchestration"],
+  "icon": "list-checks",
+  "featured": true,
+  "inspired_by": ["NousResearch/hermes-agent/optional-skills/software-development/subagent-driven-development", "RoboClaw-Robotics/RoboClaw/skills/long-horizon-execution"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/plan-orchestrator/SKILL.md",
+  "install_command": "Install the plan-orchestrator skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/plan-orchestrator"
+}

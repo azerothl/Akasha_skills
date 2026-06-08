@@ -1,0 +1,14 @@
+{
+  "id": "interface-review",
+  "name": "Interface Review",
+  "version": "1.0.0",
+  "description": "Audit UI/UX et accessibilité (checklist P0–P3, scénarios adversariaux) pour akasha-ui et Code Studio.",
+  "author": "Akasha",
+  "category": "design",
+  "tags": ["ui", "ux", "a11y", "accessibility", "review", "frontend"],
+  "icon": "layout",
+  "featured": true,
+  "inspired_by": ["nextlevelbuilder/ui-ux-pro-max-skill", "bytedance/deer-flow/skills/public/web-design-guidelines", "NousResearch/hermes-agent/optional-skills/dogfood/adversarial-ux-test"],
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/interface-review/SKILL.md",
+  "install_command": "Install the interface-review skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/interface-review"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "batch-processing",
+  "name": "Batch Processing",
+  "version": "1.0.0",
+  "description": "Appliquer la même modification à de nombreux fichiers de façon contrôlée.",
+  "author": "Akasha",
+  "category": "development",
+  "tags": ["batch", "refactor", "bulk", "files"],
+  "icon": "layers",
+  "featured": false,
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/batch-processing/SKILL.md",
+  "install_command": "Install the batch-processing skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/batch-processing"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "weekly-review",
+  "name": "Weekly Review",
+  "version": "1.0.0",
+  "description": "Create weekly review with trends, blockers, and next actions.",
+  "author": "Akasha",
+  "category": "productivity",
+  "tags": ["weekly", "review", "planning", "risk"],
+  "icon": "clipboard-list",
+  "featured": false,
+  "trust_level": "verified",
+  "compat_status": "tested-v0.8",
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/weekly-review/SKILL.md",
+  "install_command": "Install the weekly-review skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/weekly-review"
+}

@@ -42,6 +42,7 @@ Perform a lightweight security audit on a directory or set of files: detect sens
 
 - Do not expose full secret values in the report; mention "potential secret at path:line" and recommend rotation.
 - Prefer false positives to false negatives for secrets: flag anything that looks like a credential pattern.
+- Report must include **Skipped analyses** (paths not scanned, tools denied) and **Confidence** per finding — never fabricate CVEs or file paths.
 - If a path is denied by policy, explain that the user must add it to allowed_read_paths in tools_policy.yaml.
 
 ## Installation
