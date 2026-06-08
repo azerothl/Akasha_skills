@@ -18,9 +18,9 @@ def main():
     ext = path.lower().split(".")[-1]
     if ext in ("xlsx", "xls"):
         con.execute("INSTALL spreadsheet; LOAD spreadsheet;")
-        con.execute(f"CREATE TABLE t AS SELECT * FROM read_xlsx('{path}')")
+        con.execute("CREATE TABLE t AS SELECT * FROM read_xlsx(?)", [path])
     else:
-        con.execute(f"CREATE TABLE t AS SELECT * FROM read_csv_auto('{path}')")
+        con.execute("CREATE TABLE t AS SELECT * FROM read_csv_auto(?)", [path])
 
     if action == "inspect":
         print(con.execute("DESCRIBE t").fetchdf().to_string())

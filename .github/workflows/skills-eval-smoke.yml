@@ -44,12 +44,13 @@ jobs:
                   sys.exit(1)
               v = str(s.get("version", ""))
               parts = v.split(".")
-              if len(parts) < 2 or not all(p.isdigit() for p in parts[:2]):
+              if len(parts) != 3 or not all(p.isdigit() for p in parts):
                   print(f"Entry {i} id={s.get('id')!r}: version should look like semver major.minor.patch, got {v!r}")
                   sys.exit(1)
               minv = str(s.get("akasha_daemon_min_version", "")).strip()
               if minv:
-                  if len(minv.split(".")) < 2 or not all(x.isdigit() for x in minv.split(".")[:2]):
+                  min_parts = minv.split(".")
+                  if len(min_parts) != 3 or not all(x.isdigit() for x in min_parts):
                       print(f"Entry {i} id={s.get('id')!r}: akasha_daemon_min_version should look like x.y.z, got {minv!r}")
                       sys.exit(1)
           print(f"OK: {len(data)} skill(s) validated")

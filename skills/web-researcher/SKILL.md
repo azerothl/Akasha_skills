@@ -8,7 +8,7 @@ metadata:
 
 # Web Researcher
 
-Structured web research for Akasha: multi-query discovery, deep reading, validation, and synthesis using **web_search** and **web_fetch** only (no subagent delegation).
+Structured web research for Akasha: multi-query discovery, deep reading, validation, and synthesis using **web_search**, **web_fetch**, and optional **write_file** when requested by the user (no subagent delegation).
 
 ## Akasha angle
 
