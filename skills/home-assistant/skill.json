@@ -1,0 +1,12 @@
+{
+  "id": "home-assistant",
+  "name": "Home Assistant",
+  "description": "Control and query Home Assistant (smart home, domotics, sensors, scripts).",
+  "author": "Akasha",
+  "category": "home",
+  "tags": ["home-assistant", "domotics", "iot", "smart-home", "automation"],
+  "icon": "home",
+  "featured": false,
+  "install_url": "https://raw.githubusercontent.com/azerothl/Akasha_skills/main/skills/home-assistant/SKILL.md",
+  "install_command": "Install the home-assistant skill from https://github.com/azerothl/Akasha_skills/tree/main/skills/home-assistant"
+}
