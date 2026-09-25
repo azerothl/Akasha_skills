@@ -23,11 +23,11 @@ These fields are safe to use in any skill intended to be readable by either prod
 
 | Field | Required | Type | Notes |
 |-------|----------|------|-------|
-| `name` | **yes** | string | Kebab-case id; **must equal** the skill folder name (`skills/<name>/`). |
+| `name` | **yes** | string | Kebab-case id; **must equal** the skill folder name (e.g. `skills/<name>/` here, `var/skills/<name>/` on akasha-os, or equivalent layout). Pattern: `[a-z][a-z0-9-]{1,32}` (2–33 characters, starts with a letter). |
 | `description` | **yes** | string | What the skill does **and when** to use it ([agentskills.io](https://agentskills.io/specification) style). |
 | `license` | recommended | string | e.g. `MIT`. |
 | `when_to_use` | optional | string | Extra routing hint; if absent, loaders may fall back to `description`. |
-| `runtime` | optional | string[] | Catalog badge only: `[akasha]`, `[akasha-os]`, or both. Not a execution switch in this convention. |
+| `runtime` | optional | list of strings | **Always a YAML list** (never a scalar). Catalogue filter badge only — not an execution switch. See [runtime](#runtime-catalogue-filter) below. |
 
 Minimal portable block:
 
@@ -39,6 +39,21 @@ license: MIT
 ---
 ```
 
+### `name` (identifier)
+
+- **Same value** as the parent directory id: `skills/<name>/SKILL.md` in this repo; akasha-os uses `var/skills/<name>/` (or the host’s equivalent skills root).
+- **Pattern:** `[a-z][a-z0-9-]{1,32}` — lowercase letters, digits, and hyphens only; **2–33 characters**; must **start with a letter** (not a digit or hyphen).
+
+### `runtime` (catalogue filter)
+
+- **Type:** YAML **sequence** only. Do **not** use a bare string, the token `both`, or any value outside the allowed set.
+- **Allowed list items (only):** `akasha` | `akasha-os`
+- **Examples:**
+  - `runtime: [akasha-os]`
+  - `runtime: [akasha]`
+  - `runtime: [akasha, akasha-os]` — both products; **not** `both` or `"akasha, akasha-os"`.
+- **If absent:** catalogues do **not** filter the skill by runtime (skill appears regardless of product filter).
+
 ## Product extensions (same frontmatter)
 
 Extensions are **not** part of the portable contract. They may appear in the same `---` block; the other product’s loader ignores them.
@@ -49,8 +64,8 @@ Akasha loaders **ignore** these keys (akasha-os may require or interpret them):
 
 | Field | Purpose |
 |-------|---------|
-| `tools` | Declared tool surface for the skill (list). |
-| `required_caps` | Capability requirements for the host. |
+| `tools` | Declared **tool** surface for the skill (YAML list of tool ids). |
+| `required_caps` | Declared **host capabilities** the skill needs (YAML list, separate from `tools`). Do **not** fold caps into `tools` or use one key for both. |
 | *(other aos-only keys)* | Future akasha-os keys follow the same rule: Akasha ignores unknown keys. |
 
 ### Akasha only

@@ -87,8 +87,8 @@ Skills are **recipes**: one folder, one `SKILL.md` with YAML frontmatter and a m
 
 - **Filename:** `SKILL.md` (uppercase).
 - **Frontmatter (YAML between `---`):**
-  - **Required (common profile):** `name` (kebab id, matches folder name), `description` (what + when; used for routing).
-  - **Recommended / optional (portable):** `license`, `when_to_use`, `runtime` (catalog badge: `akasha` / `akasha-os`).
+  - **Required (common profile):** `name` (kebab id, matches folder name; `[a-z][a-z0-9-]{1,32}`), `description` (what + when; used for routing).
+  - **Recommended / optional (portable):** `license`, `when_to_use`, `runtime` (YAML **list** only, e.g. `[akasha]` or `[akasha, akasha-os]`; omit = no catalogue filter — see [FRONTMATTER.md](FRONTMATTER.md)).
   - **Akasha-only extensions** (other loaders ignore): `compatibility`, `metadata` (e.g. `version`), and tool guidance in the body / `tools_policy` — not a shared portable `tools` list.
   - **akasha-os-only extensions** (Akasha ignores): e.g. `tools`, `required_caps` — see [FRONTMATTER.md](FRONTMATTER.md).
 - **Body:** Markdown with instructions for the agent (when to use the skill, which tools to call, guidelines, examples). See the [Agent Skills specification](https://agentskills.io/specification).
