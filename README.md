@@ -79,14 +79,18 @@ This keeps skills compatible across daemon, TUI, Tauri UI, and Code Studio as ev
 
 ## Skill format reference (creating your own skill)
 
-If you want to create a skill for your own use (e.g. hosted elsewhere or only in your `data_dir`), the daemon only needs a valid **SKILL.md**. The format below is what Akasha expects so the agent can discover and use your skill.
+Skills are **recipes**: one folder, one `SKILL.md` with YAML frontmatter and a markdown body. If you want to create a skill for your own use (e.g. hosted elsewhere or only in your `data_dir`), the Akasha daemon only needs a valid **SKILL.md**.
+
+**Cross-product frontmatter (Akasha ↔ akasha-os):** portable fields and product-specific keys in the same file, ignore-unknown loaders — see **[FRONTMATTER.md](FRONTMATTER.md)** (LOCK A, 2026-09-25). No unified loader or dual-publish in this repo.
 
 ### Required file: SKILL.md
 
 - **Filename:** `SKILL.md` (uppercase).
 - **Frontmatter (YAML between `---`):**
-  - **Required:** `name` (identifier, e.g. `my-skill`), `description` (short text: when the agent should use this skill; used for routing).
-  - **Optional:** `license`, `compatibility`, `metadata` (e.g. `version: "1.0"`).
+  - **Required (common profile):** `name` (kebab id, matches folder name), `description` (what + when; used for routing).
+  - **Recommended / optional (portable):** `license`, `when_to_use`, `runtime` (catalog badge: `akasha` / `akasha-os`).
+  - **Akasha-only extensions** (other loaders ignore): `compatibility`, `metadata` (e.g. `version`), and tool guidance in the body / `tools_policy` — not a shared portable `tools` list.
+  - **akasha-os-only extensions** (Akasha ignores): e.g. `tools`, `required_caps` — see [FRONTMATTER.md](FRONTMATTER.md).
 - **Body:** Markdown with instructions for the agent (when to use the skill, which tools to call, guidelines, examples). See the [Agent Skills specification](https://agentskills.io/specification).
 
 ### skill.json (for the gallery / catalog)
@@ -141,6 +145,10 @@ When the user asks for X, use the tools A and B. Return the result in format …
 ## Versioning, changelog, evals
 
 See **[EVALS_AND_VERSIONING.md](EVALS_AND_VERSIONING.md)** for semver discipline, lockfile alignment with Akasha `skills.lock.jsonl`, and the planned evals CI story (Hermes-style quality loop).
+
+## Frontmatter convention (Akasha ↔ akasha-os)
+
+See **[FRONTMATTER.md](FRONTMATTER.md)** for the locked common profile (`name`, `description`, …), ignore-unknown loader rule, and examples with Akasha vs akasha-os keys in one `SKILL.md`.
 
 ## CI / Automation
 
